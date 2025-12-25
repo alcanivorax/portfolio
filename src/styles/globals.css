@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
-@import "tw-animate-css";
+/* @import "tw-animate-css"; */
 
 @custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -124,4 +128,27 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* --------------- */
+/* Custom Styling 
+/* --------------- */
+
+/* dot patterns */
+
+.bg-grid {
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.7) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 32px 32px;
+}
+
+/* dot patterns for dark */
+.dark .bg-grid {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.7) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 32px 32px;
 }
