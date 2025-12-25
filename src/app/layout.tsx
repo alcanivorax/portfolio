@@ -4,6 +4,7 @@ import { sans, mono } from "@/lib/font";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layout/navbar";
 import { SearchCommand } from "@/components/search-command";
+import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Roshan Singh | Full-Stack Developer",
@@ -30,7 +31,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          {/* <SearchCommand ={portfolio} /> */}
+          <SearchCommand project={projects} />
           {children}
         </ThemeProvider>
       </body>

@@ -1,23 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
-  const socialLinks = [
-    { name: "GitHub", url: "#", handle: "@yourusername" },
-    { name: "Twitter", url: "#", handle: "@yourusername" },
-    { name: "LinkedIn", url: "#", handle: "yourname" },
-    { name: "Email", url: "#", handle: "hello@example.com" },
-  ];
-
-  const quickLinks = [
-    { name: "Projects", url: "#projects" },
-    { name: "About", url: "#about" },
-    { name: "Blog", url: "#blog" },
-    { name: "Contact", url: "#contact" },
-  ];
-
   return (
     <footer className="border-t border-black/10 dark:border-white/10">
-      <div className="max-w-[1100px] mx-auto px-8 py-16">
+      <div className="max-w-275 mx-auto px-8 py-16">
         <div className="flex flex-col md:flex-row justify-between gap-6">
           {/* Identity */}
           <div>
@@ -25,24 +11,28 @@ export function Footer() {
               Roshan Singh
             </p>
             <p className="mt-1 text-xs text-neutral-500">
-              Developer · Systems & Tools
+              Developer · Web & Tools
             </p>
           </div>
 
           {/* Links */}
           <div className="flex items-center gap-6 text-xs">
-            <a
-              href="https://github.com/yourname"
+            <Link
+              href="https://github.com/alcanivorax"
               className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               GitHub
-            </a>
-            <a
-              href="mailto:hello@example.com"
+            </Link>
+            <Link
+              href="mailto:roshansingh6.022@gmail.com"
               className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Email
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 type ProjectMeta = {
   icon: React.ReactNode;
@@ -8,6 +9,7 @@ type ProjectMeta = {
 };
 
 type ProjectCardProps = {
+  slug: string;
   title: string;
   description?: string;
   image: string;
@@ -17,6 +19,7 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({
+  slug,
   title,
   description,
   image,
@@ -25,15 +28,15 @@ export function ProjectCard({
   cta2,
 }: ProjectCardProps) {
   return (
-    <article className="group relative w-full max-w-2xl">
+    <article className="group relative w-full max-w-2xl scroll-mt-32" id={slug}>
       {/* Card Container */}
       <div className="relative overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black transition-all duration-200 hover:border-neutral-300 dark:hover:border-neutral-700">
         {/* Image */}
-        <div className="relative aspect-[16/9] overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+        <div className="relative aspect-video overflow-hidden bg-neutral-100 dark:bg-neutral-900">
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale-50 hover:grayscale-25"
           />
         </div>
 

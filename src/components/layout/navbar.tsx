@@ -124,6 +124,8 @@ export default function Navbar() {
               href="https://personal-blog-livid-five.vercel.app/"
               className="hidden sm:inline font-medium text-gray-700 hover:text-gray-900 transition-colors
                          dark:text-neutral-300 dark:hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Blog
             </Link>

@@ -14,14 +14,15 @@ import { DialogTitle } from "@radix-ui/react-dialog";
 import { TextAlignStart } from "lucide-react";
 import { Kbd } from "./ui/kbd";
 import { CornerDownLeft } from "lucide-react";
+import Link from "next/link";
 
 type SearchItem = {
-  id: number;
-  title: string;
   slug: string;
+  title: string;
+  description?: string;
 };
 
-export function SearchCommand({ posts }: { posts: SearchItem[] }) {
+export function SearchCommand({ project }: { project: SearchItem[] }) {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
 
@@ -43,30 +44,47 @@ export function SearchCommand({ posts }: { posts: SearchItem[] }) {
       <CommandInput placeholder="Search posts…" />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="portfolio">
-          {posts.map((post) => (
+        <CommandGroup heading="Projects">
+          {project.map((project) => (
             <CommandItem
-              key={post.id}
-              value={post.title}
+              key={project.slug}
+              value={project.title}
               onSelect={() => {
-                router.push(`/post/${post.slug}`);
+                const el = document.getElementById(project.slug);
+
                 setOpen(false);
+
+                if (!el) return;
+
+                // Scroll first
+                el.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+
+                // Temporary highlight
+                el.classList.add("ring-1", "ring-neutral-300");
+
+                setTimeout(() => {
+                  el.classList.remove("ring-1", "ring-neutral-300");
+                }, 800);
               }}
             >
-              <TextAlignStart /> {post.title}
+              <TextAlignStart /> {project.title}
             </CommandItem>
           ))}
         </CommandGroup>
         <CommandGroup heading="Pages">
-          <CommandItem
-            value="About"
-            onSelect={() => {
-              router.push("/about");
-              setOpen(false);
-            }}
-          >
-            About
-          </CommandItem>
+          <Link href="https://personal-blog-livid-five.vercel.app/">
+            <CommandItem
+              value="About"
+              onSelect={() => {
+                setOpen(false);
+              }}
+            >
+              Blog
+            </CommandItem>
+          </Link>
         </CommandGroup>
       </CommandList>
       <div className="flex items-center justify-end gap-6 px-4 py-2 border-t border-border text-xs text-muted-foreground">

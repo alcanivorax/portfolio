@@ -2,8 +2,8 @@ import { ArrowUpRight } from "lucide-react";
 
 export function AboutSection() {
   return (
-    <section className="relative border-t border-neutral-200 dark:border-neutral-800 bg-stone-100 dark:bg-neutral-950">
-      <div className="relative max-w-6xl mx-auto px-8 py-20">
+    <section className="relative border-t border-neutral-200 dark:border-neutral-800 bg-stone-100 dark:bg-black">
+      <div className="relative max-w-6xl mx-auto px-8 py-70">
         <div className="max-w-2xl mx-auto">
           <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-500 mb-4">
             ABOUT
