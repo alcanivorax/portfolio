@@ -9,9 +9,8 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { useRouter } from "next/navigation";
 import { DialogTitle } from "@radix-ui/react-dialog";
-import { TextAlignStart } from "lucide-react";
+import { Box } from "lucide-react";
 import { Kbd } from "./ui/kbd";
 import { CornerDownLeft } from "lucide-react";
 import Link from "next/link";
@@ -24,7 +23,6 @@ type SearchItem = {
 
 export function SearchCommand({ project }: { project: SearchItem[] }) {
   const [open, setOpen] = React.useState(false);
-  const router = useRouter();
 
   // ⌘K / Ctrl+K
   React.useEffect(() => {
@@ -41,7 +39,7 @@ export function SearchCommand({ project }: { project: SearchItem[] }) {
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
       <DialogTitle className="sr-only">Search</DialogTitle>
-      <CommandInput placeholder="Search posts…" />
+      <CommandInput placeholder="Search Projects…" />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Projects">
@@ -70,7 +68,7 @@ export function SearchCommand({ project }: { project: SearchItem[] }) {
                 }, 800);
               }}
             >
-              <TextAlignStart /> {project.title}
+              <Box /> {project.title}
             </CommandItem>
           ))}
         </CommandGroup>
