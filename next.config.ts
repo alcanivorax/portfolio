@@ -7,11 +7,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**", // allow ALL https domains
+        hostname: "raw.githubusercontent.com",
       },
       {
-        protocol: "http",
-        hostname: "**", // allow ALL http domains (if needed)
+        protocol: "https",
+        hostname: "images.unsplash.com",
       },
     ],
   },
