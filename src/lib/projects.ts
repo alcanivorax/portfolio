@@ -5,7 +5,7 @@ export const projects = [
     description:
       "AI-powered GitHub repository analyzer for code understanding and architecture insights.",
     image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=450&fit=crop",
+      "https://raw.githubusercontent.com/alcanivorax/portfolio/main/public/dev-insight-preview.gif",
     meta: [
       { icon: "🧠", label: "AI Tool", id: "1" },
       { icon: "🛠", label: "Next.js · TypeScript", id: "2" },
@@ -13,7 +13,7 @@ export const projects = [
     ],
     cta1: "Live Demo",
     cta2: "Open Github",
-    liveLink: "",
+    liveLink: "https://dev-insight-beta.vercel.app/",
     githubLink: "https://github.com/alcanivorax/devInsight",
   },
   {
@@ -28,7 +28,7 @@ export const projects = [
       { icon: "⚛️", label: "TypeScript · Node.js", id: "2" },
       { icon: "🔥", label: "Featured", id: "3" },
     ],
-    cta1: "Npm Registry",
+    cta1: "npm",
     cta2: "Open Github",
     liveLink: "https://www.npmjs.com/package/@alcanivorax/git-msg",
     githubLink: "https://github.com/alcanivorax/git-msg",
@@ -46,35 +46,35 @@ export const projects = [
       { icon: "⚛️", label: "TypeScript · Node.js", id: "2" },
       { icon: "🔥", label: "Featured", id: "3" },
     ],
-    cta1: "Npm Registry",
+    cta1: "npm",
     cta2: "Open Github",
     liveLink: "https://www.npmjs.com/package/nero-review",
     githubLink: "https://github.com/alcanivorax/nero-review",
   },
 
-  {
-    slug: "create-mcp-server",
-    title: "create-mcp-server",
-    description: "Scaffold MCP servers with a single command.",
-    image:
-      "https://raw.githubusercontent.com/alcanivorax/create-mcp-server/main/assets/create-mcp-server-preview.gif",
-    meta: [
-      { icon: "🎨", label: "Dev Tool", id: "1" },
-      { icon: "⚛️", label: "TypeScript · Node.js", id: "2" },
-      { icon: "🔥", label: "Featured", id: "3" },
-    ],
-    cta1: "Npm Registry",
-    cta2: "Open Github",
-    liveLink: "https://www.npmjs.com/package/create-mcp-server",
-    githubLink: "https://github.com/alcanivorax/create-mcp-server",
-  },
+  // {
+  //   slug: "create-mcp-server",
+  //   title: "create-mcp-server",
+  //   description: "Scaffold MCP servers with a single command.",
+  //   image:
+  //     "https://raw.githubusercontent.com/alcanivorax/create-mcp-server/main/assets/create-mcp-server-preview.gif",
+  //   meta: [
+  //     { icon: "🎨", label: "Dev Tool", id: "1" },
+  //     { icon: "⚛️", label: "TypeScript · Node.js", id: "2" },
+  //     { icon: "🔥", label: "Featured", id: "3" },
+  //   ],
+  //   cta1: "Npm Registry",
+  //   cta2: "Open Github",
+  //   liveLink: "https://www.npmjs.com/package/create-mcp-server",
+  //   githubLink: "https://github.com/alcanivorax/create-mcp-server",
+  // },
   {
     slug: "taskmanager",
     title: "TaskManager",
     description:
       "A simple task manager to create, organize, and track work in real time.",
     image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=450&fit=crop",
+      "https://raw.githubusercontent.com/alcanivorax/taskManager/main/frontend/src/assets/dashboard5.png",
     meta: [
       { icon: "⚡", label: "Productivity", id: "1" },
       { icon: "🎨", label: "React · Node.js", id: "2" },
@@ -82,7 +82,7 @@ export const projects = [
     ],
     cta1: "Live Demo",
     cta2: "Open Github",
-    liveLink: "https://mern-task-manager-pi.vercel.app",
+    liveLink: "https://mern-task-manager-frontend-r5z8.onrender.com",
     githubLink: "https://github.com/alcanivorax/taskManager",
   },
 ];

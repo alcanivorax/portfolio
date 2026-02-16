@@ -15,36 +15,47 @@ export function AboutSection() {
 
           <div className="space-y-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias
-              odit, quas accusantium ut aliquid nam quisquam quasi culpa optio,
-              eaque neque reprehenderit dolores inventore quo? Voluptate,
-              incidunt! Recusandae, nesciunt reiciendis.
+              I’m Roshan Singh — a full-stack developer focused on building
+              scalable web applications and developer tools.
             </p>
             <p>
-              Currently working at{" "}
+              I work primarily with{" "}
               <span className="text-neutral-900 dark:text-neutral-100 font-medium">
-                @Alcanivorax
-              </span>{" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-              aliquam.
+                TypeScript, Next.js, backend APIs, and databases
+              </span>
+              , and I care about clean architecture, separation of concerns, and
+              writing code that’s easy to understand and maintain. I don’t just
+              make things work — I understand why they work.
             </p>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-              accusamus doloremque harum. Illum architecto eaque, nulla
-              asperiores dolorem harum dignissimos.
+              Currently, I’m building{" "}
+              <span className="text-neutral-900 dark:text-neutral-100 font-medium">
+                DevInsight
+              </span>
+              , an AI-powered GitHub repository analyzer that helps developers
+              understand large codebases through summaries, architecture
+              visualization, and intelligent explanations. I’m also developing a
+              franchise of minimal CLI tools called Nero, designed to improve
+              developer workflows with simplicity and precision.
+            </p>
+            <p>
+              I actively strengthen my fundamentals through Data Structures &
+              Algorithms and Low-Level Design, while reading open-source code to
+              learn how real systems are structured in production.
             </p>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#"
+              href="/resume.pdf"
+              download="roshan-singh-resume.pdf"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-neutral-200 dark:border-neutral-800 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:bg-white dark:hover:bg-black transition-colors duration-150"
             >
               <span>Download Resume</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <a
-              href="#"
+              href="mailto:roshansingh6.022@gmail.com"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-neutral-900 dark:bg-neutral-100 text-sm font-medium text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors duration-150"
             >
               <span>Get in Touch</span>
