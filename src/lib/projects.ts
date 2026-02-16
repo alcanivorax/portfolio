@@ -5,7 +5,7 @@ export const projects = [
     description:
       "AI-powered GitHub repository analyzer for code understanding and architecture insights.",
     image:
-      "https://raw.githubusercontent.com/alcanivorax/portfolio/main/public/dev-insight-preview.gif",
+      "https://raw.githubusercontent.com/alcanivorax/portfolio/main/public/dev-insight-preview.png",
     meta: [
       { icon: "🧠", label: "AI Tool", id: "1" },
       { icon: "🛠", label: "Next.js · TypeScript", id: "2" },
