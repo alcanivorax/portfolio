@@ -7,9 +7,9 @@ export const projects = [
     image:
       "https://raw.githubusercontent.com/alcanivorax/portfolio/main/public/dev-insight-preview.png",
     meta: [
-      { icon: "🧠", label: "AI Tool", id: "1" },
-      { icon: "🛠", label: "Next.js · TypeScript", id: "2" },
-      { icon: "🚧", label: "In Progress", id: "3" },
+      { label: "AI Tool", id: "1" },
+      { label: "Next.js · TypeScript", id: "2" },
+      { label: "In Progress", id: "3" },
     ],
     cta1: "Live Demo",
     cta2: "Open Github",
@@ -24,9 +24,9 @@ export const projects = [
     image:
       "https://raw.githubusercontent.com/alcanivorax/git-msg/main/assets/git-msg-preview.gif",
     meta: [
-      { icon: "🎨", label: "Git Tool", id: "1" },
-      { icon: "⚛️", label: "TypeScript · Node.js", id: "2" },
-      { icon: "🔥", label: "Featured", id: "3" },
+      { label: "Git Tool", id: "1" },
+      { label: "TypeScript · Node.js", id: "2" },
+      { label: "Featured", id: "3" },
     ],
     cta1: "npm",
     cta2: "Open Github",
@@ -42,9 +42,9 @@ export const projects = [
     image:
       "https://raw.githubusercontent.com/alcanivorax/nero-review/main/assets/nero-review-preview.gif",
     meta: [
-      { icon: "🎨", label: "Git Tool", id: "1" },
-      { icon: "⚛️", label: "TypeScript · Node.js", id: "2" },
-      { icon: "🔥", label: "Featured", id: "3" },
+      { label: "Git Tool", id: "1" },
+      { label: "TypeScript · Node.js", id: "2" },
+      { label: "Featured", id: "3" },
     ],
     cta1: "npm",
     cta2: "Open Github",
@@ -76,9 +76,9 @@ export const projects = [
     image:
       "https://raw.githubusercontent.com/alcanivorax/taskManager/main/frontend/src/assets/dashboard5.png",
     meta: [
-      { icon: "⚡", label: "Productivity", id: "1" },
-      { icon: "🎨", label: "React · Node.js", id: "2" },
-      { icon: "✅", label: "Completed", id: "3" },
+      { label: "Productivity", id: "1" },
+      { ilabel: "React · Node.js", id: "2" },
+      { label: "Completed", id: "3" },
     ],
     cta1: "Live Demo",
     cta2: "Open Github",
