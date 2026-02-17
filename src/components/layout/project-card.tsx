@@ -1,10 +1,8 @@
-import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 type ProjectMeta = {
-  icon: React.ReactNode;
   label: string;
   id: string;
 };
@@ -67,7 +65,6 @@ export function ProjectCard({
                 key={item.id}
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 text-xs text-neutral-700 dark:text-neutral-300"
               >
-                <span>{item.icon}</span>
                 <span>{item.label}</span>
               </div>
             ))}
