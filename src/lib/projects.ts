@@ -77,7 +77,7 @@ export const projects = [
       "https://raw.githubusercontent.com/alcanivorax/taskManager/main/frontend/src/assets/dashboard5.png",
     meta: [
       { label: "Productivity", id: "1" },
-      { ilabel: "React · Node.js", id: "2" },
+      { label: "React · Node.js", id: "2" },
       { label: "Completed", id: "3" },
     ],
     cta1: "Live Demo",
