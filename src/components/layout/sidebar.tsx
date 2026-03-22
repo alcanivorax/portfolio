@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Github, Mail } from "lucide-react";
@@ -7,7 +6,10 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function Sidebar() {
   return (
-    <aside className="fixed left-0 top-0 h-screen w-full md:w-72 border-r border-border bg-background/80 backdrop-blur-md z-50 flex flex-col">
+    <aside
+      className="fixed left-0 top-0 h-screen w-full md:w-72 border-r border-border backdrop-blur-md z-50 flex flex-col"
+      style={{ background: "var(--sidebar-bg)" }}
+    >
       <div className="flex-1 p-6 md:p-8 flex flex-col">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,12 +25,10 @@ export function Sidebar() {
               Full-Stack Developer
             </p>
           </div>
-
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Building modern web apps and developer tools. Focused on clean code, 
+            Building modern web apps and developer tools. Focused on clean code,
             intuitive design, and scalable systems.
           </p>
-
           <nav className="space-y-1">
             {[
               { href: "#about", label: "About" },
@@ -45,7 +45,6 @@ export function Sidebar() {
             ))}
           </nav>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

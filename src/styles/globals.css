@@ -5,277 +5,438 @@
 @custom-variant dark (&:is(.dark *));
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --color-ring: var(--ring);
-  --color-border: var(--border);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-input: var(--input);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
+    --color-ring: var(--ring);
+    --color-border: var(--border);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-input: var(--input);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.995 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.15 0 0);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.15 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.15 0 0);
-  --destructive: oklch(0.55 0.2 25);
-  --border: oklch(0.91 0 0);
-  --input: oklch(0.91 0 0);
-  --ring: oklch(0.65 0 0);
+    --radius: 0.75rem;
+    --background: oklch(0.99 0 0);
+    --foreground: oklch(0.13 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.13 0 0);
+    --primary: oklch(0.15 0 0);
+    --primary-foreground: oklch(0.99 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.15 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.5 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.15 0 0);
+    --destructive: oklch(0.55 0.2 25);
+    --border: oklch(0.91 0 0);
+    --input: oklch(0.91 0 0);
+    --ring: oklch(0.65 0 0);
+
+    /* Background design tokens — light mode */
+    --grid-line: rgba(0, 0, 0, 0.07);
+    --circle-line: rgba(0, 0, 0, 0.08);
+    --circle-line-strong: rgba(0, 0, 0, 0.12);
+    --circle-fill: rgba(0, 0, 0, 0.03);
+    --sidebar-bg: rgba(255, 255, 255, 0.75);
 }
 
 .dark {
-  --background: oklch(0.13 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.98 0 0);
-  --primary-foreground: oklch(0.13 0 0);
-  --secondary: oklch(0.21 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.21 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.21 0 0);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.65 0.2 25);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.5 0 0);
+    --background: oklch(0.11 0 0);
+    --foreground: oklch(0.98 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.98 0 0);
+    --primary: oklch(0.98 0 0);
+    --primary-foreground: oklch(0.11 0 0);
+    --secondary: oklch(0.21 0 0);
+    --secondary-foreground: oklch(0.98 0 0);
+    --muted: oklch(0.21 0 0);
+    --muted-foreground: oklch(0.65 0 0);
+    --accent: oklch(0.21 0 0);
+    --accent-foreground: oklch(0.98 0 0);
+    --destructive: oklch(0.65 0.2 25);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 12%);
+    --ring: oklch(0.5 0 0);
+
+    /* Background design tokens — dark mode */
+    --grid-line: rgba(255, 255, 255, 0.05);
+    --circle-line: rgba(255, 255, 255, 0.07);
+    --circle-line-strong: rgba(255, 255, 255, 0.1);
+    --circle-fill: rgba(255, 255, 255, 0.02);
+    --sidebar-bg: rgba(17, 17, 17, 0.75);
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply text-foreground antialiased;
+        background: transparent;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .mask-vignette {
-    mask-image: radial-gradient(
-      ellipse 80% 80% at 50% 50%,
-      black 40%,
-      transparent 100%
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* ============================================================
+   LAYER 2: RADIAL GRADIENT — DEPTH / SOFT LIGHT SOURCE
+   Creates a directional depth effect from top-left corner.
+   Uses rgba() for guaranteed cross-browser visibility.
+   ============================================================ */
+.bg-depth-radial {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(0, 0, 0, 0.12) 0%,
+            rgba(0, 0, 0, 0.05) 25%,
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 85% 80%,
+            rgba(0, 0, 0, 0.07) 0%,
+            transparent 50%
+        );
+}
+
+.dark .bg-depth-radial {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 255, 255, 0.07) 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 80% 85%,
+            rgba(120, 100, 255, 0.06) 0%,
+            transparent 45%
+        );
+}
+
+/* ============================================================
+   LAYER 3: GRID OVERLAY — STRUCTURE / RHYTHM
+   Applied ON TOP of the radial gradient via z-index stacking.
+   Uses rgba() for guaranteed visibility. 40px grid.
+   ============================================================ */
+.bg-grid-overlay {
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.dark .bg-grid-overlay {
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.07) 1px,
+            transparent 1px
+        );
+    background-size: 40px 40px;
+}
+
+/* ============================================================
+   LAYER 4: MOUSE-FOLLOW SPOTLIGHT
+   ============================================================ */
+.bg-gradient-spotlight {
+    background:
+        radial-gradient(
+            circle 500px at var(--mouse-x, 50%) var(--mouse-y, 0%),
+            rgba(0, 0, 0, 0.04) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle 300px at 80% 20%,
+            rgba(100, 120, 255, 0.05) 0%,
+            transparent 50%
+        );
+}
+
+.dark .bg-gradient-spotlight {
+    background:
+        radial-gradient(
+            circle 500px at var(--mouse-x, 50%) var(--mouse-y, 0%),
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle 300px at 80% 20%,
+            rgba(80, 100, 255, 0.08) 0%,
+            transparent 50%
+        );
+}
+
+/* ============================================================
+   LAYER 5: NOISE TEXTURE — ORGANIC GRAIN
+   ============================================================ */
+.bg-noise {
+    position: relative;
+}
+
+.bg-noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
+}
+
+.dark .bg-noise::before {
+    opacity: 0.035;
+}
+
+/* ============================================================
+   LEGACY CLASSES — kept for any other usages in the codebase
+   ============================================================ */
+.bg-grid-primary {
+    background-image:
+        linear-gradient(to right, oklch(0 0 0 / 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, oklch(0 0 0 / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+.dark .bg-grid-primary {
+    background-image:
+        linear-gradient(to right, oklch(1 0 0 / 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, oklch(1 0 0 / 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+.bg-grid-secondary {
+    background-image:
+        linear-gradient(to right, oklch(0 0 0 / 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, oklch(0 0 0 / 0.03) 1px, transparent 1px);
+    background-size: 16px 16px;
+}
+
+.dark .bg-grid-secondary {
+    background-image:
+        linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 16px 16px;
+}
+
+.bg-gradient-hero {
+    background:
+        radial-gradient(
+            ellipse 100% 60% at 50% 0%,
+            oklch(0 0 0 / 0.08) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 0% 50%,
+            oklch(0.55 0.08 260 / 0.06) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse 60% 40% at 100% 80%,
+            oklch(0.55 0.08 280 / 0.04) 0%,
+            transparent 50%
+        );
+}
+
+.dark .bg-gradient-hero {
+    background:
+        radial-gradient(
+            ellipse 100% 60% at 50% 0%,
+            oklch(1 0 0 / 0.12) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 80% 50% at 0% 50%,
+            oklch(0.6 0.15 260 / 0.1) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse 60% 40% at 100% 80%,
+            oklch(0.6 0.15 280 / 0.08) 0%,
+            transparent 50%
+        );
+}
+
+.bg-gradient-section {
+    background: radial-gradient(
+        ellipse 80% 40% at 50% 0%,
+        oklch(0 0 0 / 0.04) 0%,
+        transparent 50%
     );
-  }
-  
-  .mask-fade-vertical {
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 15%,
-      black 85%,
-      transparent 100%
+}
+
+.dark .bg-gradient-section {
+    background: radial-gradient(
+        ellipse 80% 40% at 50% 0%,
+        oklch(1 0 0 / 0.06) 0%,
+        transparent 50%
     );
-  }
-  
-  .mask-fade-horizontal {
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 10%,
-      black 90%,
-      transparent 100%
-    );
-  }
 }
 
-.bg-grain {
-  position: relative;
+.bg-gradient-radial {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            oklch(0 0 0 / 0.06) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 70% 60%,
+            oklch(0 0 0 / 0.04) 0%,
+            transparent 50%
+        );
 }
 
-.bg-grain::before {
-  content: "";
-  position: absolute;
-  inset: -200%;
-  width: 400%;
-  height: 400%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.025;
-  pointer-events: none;
-  animation: grain 0.5s steps(1) infinite;
+.dark .bg-gradient-radial {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            oklch(1 0 0 / 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 70% 60%,
+            oklch(1 0 0 / 0.06) 0%,
+            transparent 50%
+        );
 }
 
-.dark .bg-grain::before {
-  opacity: 0.04;
+.bg-gradient-directional {
+    background:
+        linear-gradient(135deg, oklch(0 0 0 / 0.05) 0%, transparent 50%),
+        linear-gradient(225deg, oklch(0.55 0.05 260 / 0.04) 0%, transparent 50%);
 }
 
-@keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-2%, -2%); }
-  20% { transform: translate(2%, 2%); }
-  30% { transform: translate(-1%, 1%); }
-  40% { transform: translate(1%, -1%); }
-  50% { transform: translate(-2%, 2%); }
-  60% { transform: translate(2%, -2%); }
-  70% { transform: translate(0%, 2%); }
-  80% { transform: translate(-2%, 0%); }
-  90% { transform: translate(2%, 0%); }
+.dark .bg-gradient-directional {
+    background:
+        linear-gradient(135deg, oklch(1 0 0 / 0.08) 0%, transparent 50%),
+        linear-gradient(225deg, oklch(0.5 0.1 260 / 0.08) 0%, transparent 50%);
 }
 
-.bg-grid-lines {
-  background-image: 
-    linear-gradient(to right, oklch(0 0 0 / 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0 0 0 / 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
+.bg-gradient-mesh {
+    background:
+        radial-gradient(
+            at 0% 0%,
+            oklch(0.55 0.1 260 / 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 100% 0%,
+            oklch(0.55 0.1 280 / 0.06) 0%,
+            transparent 50%
+        ),
+        radial-gradient(at 50% 100%, oklch(0 0 0 / 0.04) 0%, transparent 50%);
 }
 
-.dark .bg-grid-lines {
-  background-image: 
-    linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+.dark .bg-gradient-mesh {
+    background:
+        radial-gradient(
+            at 0% 0%,
+            oklch(0.6 0.15 260 / 0.12) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 100% 0%,
+            oklch(0.6 0.15 280 / 0.1) 0%,
+            transparent 50%
+        ),
+        radial-gradient(at 50% 100%, oklch(1 0 0 / 0.08) 0%, transparent 50%);
 }
 
-.bg-grid-fine {
-  background-image: 
-    linear-gradient(to right, oklch(0 0 0 / 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0 0 0 / 0.02) 1px, transparent 1px);
-  background-size: 32px 32px;
+.bg-gradient-mesh-hero {
+    background:
+        radial-gradient(
+            at 20% 0%,
+            oklch(0.6 0.12 250 / 0.1) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 80% 0%,
+            oklch(0.6 0.12 280 / 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 50% 50%,
+            oklch(0.55 0.08 260 / 0.06) 0%,
+            transparent 60%
+        ),
+        radial-gradient(at 100% 100%, oklch(0 0 0 / 0.05) 0%, transparent 50%);
 }
 
-.dark .bg-grid-fine {
-  background-image: 
-    linear-gradient(to right, oklch(1 0 0 / 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.02) 1px, transparent 1px);
-}
-
-.bg-radial-soft {
-  background: radial-gradient(
-    ellipse 120% 80% at 50% 0%,
-    oklch(0 0 0 / 0.03) 0%,
-    transparent 60%
-  );
-}
-
-.dark .bg-radial-soft {
-  background: radial-gradient(
-    ellipse 120% 80% at 50% 0%,
-    oklch(1 0 0 / 0.06) 0%,
-    transparent 60%
-  );
-}
-
-.bg-radial-center {
-  background: radial-gradient(
-    ellipse 60% 40% at 50% 30%,
-    oklch(0 0 0 / 0.02) 0%,
-    transparent 70%
-  );
-}
-
-.dark .bg-radial-center {
-  background: radial-gradient(
-    ellipse 60% 40% at 50% 30%,
-    oklch(1 0 0 / 0.03) 0%,
-    transparent 70%
-  );
-}
-
-.bg-radial-top-left {
-  background: radial-gradient(
-    ellipse 50% 50% at 0% 0%,
-    oklch(0.6 0.1 250 / 0.04) 0%,
-    transparent 70%
-  );
-}
-
-.dark .bg-radial-top-left {
-  background: radial-gradient(
-    ellipse 50% 50% at 0% 0%,
-    oklch(0.7 0.15 260 / 0.06) 0%,
-    transparent 70%
-  );
-}
-
-.bg-radial-bottom-right {
-  background: radial-gradient(
-    ellipse 40% 40% at 100% 100%,
-    oklch(0.55 0.08 280 / 0.03) 0%,
-    transparent 70%
-  );
-}
-
-.dark .bg-radial-bottom-right {
-  background: radial-gradient(
-    ellipse 40% 40% at 100% 100%,
-    oklch(0.6 0.1 280 / 0.05) 0%,
-    transparent 70%
-  );
+.dark .bg-gradient-mesh-hero {
+    background:
+        radial-gradient(
+            at 20% 0%,
+            oklch(0.6 0.2 250 / 0.15) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 80% 0%,
+            oklch(0.6 0.2 280 / 0.12) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 50% 50%,
+            oklch(0.5 0.15 260 / 0.1) 0%,
+            transparent 60%
+        ),
+        radial-gradient(at 100% 100%, oklch(1 0 0 / 0.1) 0%, transparent 50%);
 }
 
 .text-gradient {
-  background: linear-gradient(
-    135deg,
-    oklch(0.3 0 0) 0%,
-    oklch(0.15 0 0) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    background: linear-gradient(
+        135deg,
+        oklch(0.25 0 0) 0%,
+        oklch(0.15 0 0) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .dark .text-gradient {
-  background: linear-gradient(
-    135deg,
-    oklch(0.95 0 0) 0%,
-    oklch(0.7 0 0) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    background: linear-gradient(
+        135deg,
+        oklch(0.95 0 0) 0%,
+        oklch(0.7 0 0) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .glass {
-  background: oklch(1 0 0 / 0.7);
-  backdrop-filter: blur(16px) saturate(180%);
+    background: oklch(1 0 0 / 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
 }
 
 .dark .glass {
-  background: oklch(0.13 0 0 / 0.7);
-  backdrop-filter: blur(16px) saturate(180%);
-}
-
-.glass-strong {
-  background: oklch(1 0 0 / 0.85);
-  backdrop-filter: blur(24px) saturate(200%);
-}
-
-.dark .glass-strong {
-  background: oklch(0.13 0 0 / 0.85);
-  backdrop-filter: blur(24px) saturate(200%);
+    background: oklch(0.11 0 0 / 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
 }

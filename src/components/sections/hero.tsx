@@ -2,17 +2,18 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { HeroBackground } from "@/components/ui/background-effects";
 
 export function Hero() {
   return (
-    <section className="min-h-[80vh] flex items-center relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
+    <section className="min-h-[80vh] flex items-center relative overflow-hidden">
+      <HeroBackground />
       
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
-        className="space-y-8 relative"
+        className="space-y-8 relative z-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}

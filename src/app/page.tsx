@@ -10,10 +10,12 @@ import { BackgroundEffects } from "@/components/ui/background-effects";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background relative">
+    // ⚠️ bg-background removed — it was painting solid white over all background layers.
+    // BackgroundEffects handles the base color via its own fixed Layer 1 div.
+    <div className="min-h-screen relative">
       <BackgroundEffects />
       <Sidebar />
-      
+
       <main className="md:ml-72 min-h-screen relative">
         <div className="px-6 py-12 md:px-12 md:py-20 lg:py-24 max-w-5xl">
           <Hero />
