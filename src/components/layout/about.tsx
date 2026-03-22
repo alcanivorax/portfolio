@@ -1,69 +1,107 @@
-import { ArrowUpRight } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowUpRight, Download } from "lucide-react";
+import { Container } from "@/components/ui/container";
 
 export function AboutSection() {
   return (
-    <section className="relative border-t border-neutral-200 dark:border-neutral-800 bg-stone-100 dark:bg-black">
-      <div className="relative max-w-6xl mx-auto px-8 py-70">
-        <div className="max-w-2xl mx-auto">
-          <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-500 mb-4">
-            ABOUT
-          </p>
+    <section className="relative border-t border-border bg-background">
+      <Container className="py-24 md:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="max-w-2xl mx-auto"
+        >
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4"
+          >
+            About
+          </motion.p>
 
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 mb-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-6"
+          >
             Building products that matter
-          </h2>
+          </motion.h2>
 
-          <div className="space-y-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="space-y-4 text-muted-foreground leading-relaxed"
+          >
             <p>
-              I’m Roshan Singh — a full-stack developer focused on building
+              I&apos;m Roshan Singh — a full-stack developer focused on building
               scalable web applications and developer tools.
             </p>
             <p>
               I work primarily with{" "}
-              <span className="text-neutral-900 dark:text-neutral-100 font-medium">
+              <span className="text-foreground font-medium">
                 TypeScript, Next.js, backend APIs, and databases
               </span>
               , and I care about clean architecture, separation of concerns, and
-              writing code that’s easy to understand and maintain. I don’t just
+              writing code that&apos;s easy to understand and maintain. I don&apos;t just
               make things work — I understand why they work.
             </p>
             <p>
-              Currently, I’m building{" "}
-              <span className="text-neutral-900 dark:text-neutral-100 font-medium">
+              Currently, I&apos;m building{" "}
+              <span className="text-foreground font-medium">
                 DevInsight
               </span>
               , an AI-powered GitHub repository analyzer that helps developers
               understand large codebases through summaries, architecture
-              visualization, and intelligent explanations. I’m also developing a
+              visualization, and intelligent explanations. I&apos;m also developing a
               franchise of minimal CLI tools called Nero, designed to improve
               developer workflows with simplicity and precision.
             </p>
             <p>
-              I actively strengthen my fundamentals through Data Structures &
+              I actively strengthen my fundamentals through Data Structures &amp;
               Algorithms and Low-Level Design, while reading open-source code to
               learn how real systems are structured in production.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+            className="mt-8 flex flex-wrap gap-3"
+          >
+            <motion.a
               href="/resume.pdf"
               download="roshan-singh-resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-neutral-200 dark:border-neutral-800 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:bg-white dark:hover:bg-black transition-colors duration-150"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border bg-background text-sm font-medium text-foreground hover:bg-muted transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
+              <Download className="w-4 h-4" />
               <span>Download Resume</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="mailto:roshansingh6.022@gmail.com"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-neutral-900 dark:bg-neutral-100 text-sm font-medium text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors duration-150"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <span>Get in Touch</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </div>
-      </div>
+              <ArrowUpRight className="w-4 h-4" />
+            </motion.a>
+          </motion.div>
+        </motion.div>
+      </Container>
     </section>
   );
 }

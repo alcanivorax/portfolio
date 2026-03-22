@@ -1,6 +1,8 @@
-import { ArrowUpRight } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 type ProjectMeta = {
   label: string;
@@ -17,6 +19,7 @@ type ProjectCardProps = {
   cta2?: string;
   liveLink: string;
   githubLink: string;
+  index?: number;
 };
 
 export function ProjectCard({
@@ -29,73 +32,85 @@ export function ProjectCard({
   cta2,
   liveLink,
   githubLink,
+  index = 0,
 }: ProjectCardProps) {
   return (
-    <article className="group relative w-full max-w-2xl scroll-mt-32" id={slug}>
-      {/* Card Container */}
-      <div className="relative overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black transition-all duration-200 hover:border-neutral-300 dark:hover:border-neutral-700">
-        {/* Image */}
-        <div className="relative aspect-video overflow-hidden bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center">
+    <motion.article
+      id={slug}
+      className="group relative w-full max-w-2xl scroll-mt-32"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
+    >
+      <div className="relative overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-foreground/20 hover:shadow-lg">
+        <div className="relative aspect-video overflow-hidden bg-muted flex items-center justify-center">
           <Image
             src={image}
             alt={title}
             fill
             sizes="(max-width: 768px) 100vw, 700px"
-            className="object-contain transition-transform duration-500 group-hover:scale-105 grayscale-50 hover:grayscale-25"
+            className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
           />
         </div>
 
-        {/* Content */}
         <div className="p-6">
           <div className="mb-4">
-            <h3 className="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-1">
+            <h3 className="text-lg font-semibold text-foreground mb-1">
               {title}
             </h3>
             {description && (
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {description}
               </p>
             )}
           </div>
 
-          {/* Meta Pills */}
           <div className="flex flex-wrap gap-2 mb-5">
             {meta.map((item) => (
-              <div
+              <span
                 key={item.id}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 text-xs text-neutral-700 dark:text-neutral-300"
+                className="inline-flex items-center px-2.5 py-1 rounded-md border border-border bg-muted/50 text-xs text-muted-foreground"
               >
-                <span>{item.label}</span>
-              </div>
+                {item.label}
+              </span>
             ))}
           </div>
 
-          {/* CTAs */}
-          <div className="flex items-center gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+          <div className="flex items-center gap-3 pt-4 border-t border-border">
             {cta1 && (
-              <button className="group/btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black text-sm font-medium hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors duration-150">
-                <Link target="_blank" rel="noopener noreferrer" href={liveLink}>
-                  {cta1}
-                </Link>
-
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-              </button>
+              <motion.a
+                href={liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {cta1}
+                <ExternalLink className="w-3.5 h-3.5" />
+              </motion.a>
             )}
             {cta2 && (
-              <button className="group/btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 text-sm font-medium hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-150">
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={githubLink}
-                >
-                  {cta2}
-                </Link>
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-              </button>
+              <motion.a
+                href={githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border bg-background text-foreground text-sm font-medium hover:bg-muted transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Github className="w-3.5 h-3.5" />
+                {cta2}
+              </motion.a>
             )}
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

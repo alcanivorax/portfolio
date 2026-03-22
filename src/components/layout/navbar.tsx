@@ -1,137 +1,129 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Github } from "lucide-react";
-import { ThemeToggle } from "./theme-toggle";
 import Link from "next/link";
-import { Kbd } from "@/components/ui/kbd";
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, Github, Menu, X } from "lucide-react";
+import { ThemeToggle } from "./theme-toggle";
+import { Container } from "@/components/ui/container";
 
-export default function Navbar() {
-  const [mounted, setMounted] = useState<boolean>(false);
-
+function useMounted() {
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- needed for hydration
     setMounted(true);
   }, []);
+  return mounted;
+}
+
+export default function Navbar() {
+  const mounted = useMounted();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const openSearch = () => {
+    document.dispatchEvent(
+      new KeyboardEvent("keydown", { key: "k", ctrlKey: true })
+    );
+  };
 
   if (!mounted) {
-    return null;
+    return (
+      <header className="h-16 border-b border-border" />
+    );
   }
 
   return (
-    <nav className="border-b border-gray-200 bg-stone-100 dark:border-neutral-800 dark:bg-black">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* App Name */}
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
+      <Container>
+        <nav className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="text-2xl font-medium text-gray-700 hover:text-gray-900 transition-colors
-                       dark:text-neutral-300 dark:hover:text-white"
+            className="text-lg font-semibold text-foreground hover:text-primary transition-colors"
           >
             Roshan Singh
           </Link>
 
-          {/* Right Side */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            {/* Search (desktop / tablet) */}
-            <div className="relative hidden sm:block">
-              <input
-                type="text"
-                placeholder="Search..."
-                readOnly
-                onClick={() =>
-                  document.dispatchEvent(
-                    new KeyboardEvent("keydown", { key: "k", ctrlKey: true })
-                  )
-                }
-                className="
-      w-44 md:w-52 px-3 py-1.5 pr-16 text-sm rounded-md
-      border border-gray-300 bg-white text-gray-900
-      cursor-pointer
-      focus:outline-none focus:ring-1 focus:ring-gray-400
-      dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100
-      dark:placeholder:text-neutral-500
-      dark:focus:ring-neutral-700 hover:shadow-sm transition-shadow
+          <div className="flex items-center gap-2">
+            <motion.button
+              onClick={openSearch}
+              className="hidden sm:flex items-center gap-2 h-9 px-3 rounded-md border border-border bg-muted/50 hover:bg-muted text-muted-foreground text-sm transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Search className="w-4 h-4" />
+              <span className="text-muted-foreground/60">Search...</span>
+              <kbd className="hidden lg:inline-flex h-5 items-center gap-1 rounded border border-border bg-background px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
+                <span className="text-xs">⌘</span>K
+              </kbd>
+            </motion.button>
 
-
-    "
-              />
-
-              {/* Search icon */}
-              <button
-                onClick={() =>
-                  document.dispatchEvent(
-                    new KeyboardEvent("keydown", { key: "k", ctrlKey: true })
-                  )
-                }
-                className="absolute right-2 top-1/2 -translate-y-1/2
-               text-gray-400 hover:text-gray-600 cursor-pointer
-               dark:text-neutral-500 dark:hover:text-neutral-300"
-                aria-label="Open search"
-              >
-                <Search className="w-4 h-4" />
-              </button>
-
-              {/* Shortcut hint */}
-              <Kbd
-                className="absolute right-13 top-1/2 -translate-y-1/2
-               text-[15px] rounded mr-1
-               bg-gray-100 text-gray-600
-               dark:bg-neutral-800 dark:text-neutral-400"
-              >
-                ⌘
-              </Kbd>
-              <Kbd
-                className="absolute right-7 top-1/2 -translate-y-1/2
-               text-[12px] rounded mr-1
-               bg-gray-100 text-gray-600
-               dark:bg-neutral-800 dark:text-neutral-400"
-              >
-                K
-              </Kbd>
-            </div>
-
-            {/* Search icon (mobile) */}
             <button
+              onClick={openSearch}
+              className="sm:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Search"
-              onClick={() =>
-                document.dispatchEvent(
-                  new KeyboardEvent("keydown", { key: "k", ctrlKey: true })
-                )
-              }
-              className="sm:hidden text-gray-600 hover:text-gray-900
-             dark:text-neutral-400 dark:hover:text-white"
             >
               <Search className="w-5 h-5" />
             </button>
 
-            {/* Theme Toggle */}
             <ThemeToggle />
 
-            {/* GitHub */}
             <Link
               href="https://github.com/alcanivorax"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-gray-900 transition-colors
-                         dark:text-neutral-300 dark:hover:text-white"
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </Link>
 
-            {/* About (hide on very small screens) */}
             <Link
               href="https://personal-blog-livid-five.vercel.app/"
-              className="hidden sm:inline font-medium text-gray-700 hover:text-gray-900 transition-colors
-                         dark:text-neutral-300 dark:hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
+              className="hidden md:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Blog
             </Link>
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
+            </button>
           </div>
-        </div>
-      </div>
-    </nav>
+        </nav>
+
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden py-4 border-t border-border"
+            >
+              <div className="flex flex-col gap-3">
+                <Link
+                  href="https://personal-blog-livid-five.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </Container>
+    </header>
   );
 }

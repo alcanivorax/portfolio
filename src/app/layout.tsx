@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
-import { sans, mono } from "@/lib/font";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layout/navbar";
 import { SearchCommand } from "@/components/search-command";
 import { projects } from "@/lib/projects";
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   title: "Roshan Singh | Full-Stack Developer",
@@ -26,9 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${sans.variable} ${mono.variable} antialiased bg-stone-100 dark:bg-black transition-colors`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <SearchCommand project={projects} />
