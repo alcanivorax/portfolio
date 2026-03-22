@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="min-h-[80vh] flex items-center relative overflow-hidden">
       <HeroBackground />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -50,8 +50,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
         >
-          Full-stack developer crafting intuitive experiences with modern technologies. 
-          Focused on AI-powered developer tools and scalable systems.
+          Full-stack developer crafting intuitive experiences with modern
+          technologies. Focused on AI-powered developer tools and scalable
+          systems.
         </motion.p>
 
         <motion.div
