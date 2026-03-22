@@ -17,7 +17,7 @@ export default function HomePage() {
       <Sidebar />
 
       <main className="md:ml-72 min-h-screen relative">
-        <div className="px-6 py-12 md:px-12 md:py-20 lg:py-24 max-w-5xl">
+        <div className="px-6 pt-16 pb-12 md:px-12 md:py-20 lg:py-24 max-w-5xl">
           <Hero />
           <div className="py-24 md:py-32">
             <ProjectShowcase />

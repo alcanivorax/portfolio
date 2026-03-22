@@ -42,20 +42,20 @@ export function ProjectShowcase() {
               transition={{ duration: 0.6 }}
               className="group relative"
             >
-              <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="grid md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start lg:items-center">
                 <motion.div
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className={`lg:col-span-7 ${index % 2 === 1 ? "lg:order-2" : ""}`}
+                  className={`md:col-span-7 ${index % 2 === 1 ? "md:order-2 lg:order-2" : "md:order-1 lg:order-1"}`}
                 >
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted border border-border/50 group-hover:border-border transition-all duration-500">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 55vw"
                       className="object-cover transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0  transition-opacity duration-500" />
@@ -67,7 +67,7 @@ export function ProjectShowcase() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-1" : ""}`}
+                  className={`md:col-span-5 ${index % 2 === 1 ? "md:order-1 lg:order-1" : "md:order-2 lg:order-2"}`}
                 >
                   <div className="space-y-6">
                     <div className="space-y-3">
