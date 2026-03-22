@@ -412,7 +412,7 @@ html {
 .text-gradient {
     background: linear-gradient(
         135deg,
-        oklch(0.25 0 0) 0%,
+        oklch(0.65 0 0) 0%,
         oklch(0.15 0 0) 100%
     );
     -webkit-background-clip: text;
@@ -420,7 +420,7 @@ html {
     background-clip: text;
 }
 
-.dark .text-gradient {
+:root.dark .text-gradient {
     background: linear-gradient(
         135deg,
         oklch(0.95 0 0) 0%,
