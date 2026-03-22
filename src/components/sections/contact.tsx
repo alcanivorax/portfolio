@@ -25,8 +25,9 @@ export function Contact() {
               Let&apos;s work together
             </h2>
             <p className="text-muted-foreground leading-relaxed max-w-lg">
-              I&apos;m always interested in hearing about new projects and opportunities. 
-              Whether you have a question or just want to say hi, feel free to reach out.
+              I&apos;m always interested in hearing about new projects and
+              opportunities. Whether you have a question or just want to say hi,
+              feel free to reach out.
             </p>
           </div>
 
@@ -46,7 +47,7 @@ export function Contact() {
               <Mail className="w-4 h-4" />
               Send an email
             </motion.a>
-            
+
             <motion.a
               href="https://github.com/alcanivorax"
               target="_blank"
@@ -68,9 +69,9 @@ export function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="pt-8 border-t border-border/50"
           >
-            <p className="text-xs text-muted-foreground">
+            {/*<p className="text-xs text-muted-foreground">
               Prefer email? <a href="mailto:roshansingh6.022@gmail.com" className="text-foreground hover:underline">roshansingh6.022@gmail.com</a>
-            </p>
+            </p>*/}
           </motion.div>
         </div>
       </motion.div>

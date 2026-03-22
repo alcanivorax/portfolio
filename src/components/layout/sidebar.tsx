@@ -34,6 +34,10 @@ export function Sidebar() {
               { href: "#about", label: "About" },
               { href: "#projects", label: "Projects" },
               { href: "#contact", label: "Contact" },
+              {
+                href: "https://personal-blog-livid-five.vercel.app/",
+                label: "Blog",
+              },
             ].map((item) => (
               <Link
                 key={item.href}

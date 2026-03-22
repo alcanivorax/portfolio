@@ -12,8 +12,10 @@ export function Footer() {
         transition={{ duration: 0.5 }}
         className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground"
       >
-        <p>© {new Date().getFullYear()} Roshan Singh. Built with Next.js.</p>
-        <p>Designed & Developed by me</p>
+        <p className="mx-12">
+          © {new Date().getFullYear()} Roshan Singh. Built with Next.js.
+        </p>
+        {/*<p>Designed & Developed by me</p>*/}
       </motion.div>
     </footer>
   );

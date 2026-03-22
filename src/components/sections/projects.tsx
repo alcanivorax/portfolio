@@ -26,8 +26,8 @@ export function ProjectShowcase() {
             Things I&apos;ve built
           </h2>
           <p className="text-muted-foreground max-w-xl leading-relaxed">
-            A collection of projects showcasing my work in developer tools, 
-            AI applications, and modern web development.
+            A collection of projects showcasing my work in developer tools, AI
+            applications, and modern web development.
           </p>
         </motion.div>
 
@@ -56,9 +56,9 @@ export function ProjectShowcase() {
                       alt={project.title}
                       fill
                       sizes="(max-width: 1024px) 100vw, 60vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0  transition-opacity duration-500" />
                   </div>
                 </motion.div>
 
@@ -120,7 +120,8 @@ export function ProjectShowcase() {
 
                     <div className="h-px bg-border/50 w-full pt-4">
                       <span className="text-[10px] font-mono text-muted-foreground/50 uppercase tracking-widest">
-                        {String(index + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+                        {String(index + 1).padStart(2, "0")} /{" "}
+                        {String(projects.length).padStart(2, "0")}
                       </span>
                     </div>
                   </div>

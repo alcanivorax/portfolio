@@ -87,7 +87,7 @@ export function Hero() {
           className="flex items-center gap-8 pt-8 border-t border-border/30"
         >
           <div>
-            <p className="text-2xl font-semibold text-foreground">4+</p>
+            <p className="text-2xl font-semibold text-foreground">7+</p>
             <p className="text-xs text-muted-foreground">Projects Built</p>
           </div>
           <div className="h-8 w-px bg-border/50" />
