@@ -30,16 +30,3 @@ export function Container({
     </div>
   );
 }
-
-interface SectionProps extends React.HTMLAttributes<HTMLElement> {
-  id?: string;
-  children: React.ReactNode;
-}
-
-export function Section({ className, id, children, ...props }: SectionProps) {
-  return (
-    <section id={id} className={className} {...props}>
-      {children}
-    </section>
-  );
-}

@@ -1,16 +1,34 @@
 "use client";
 
-
-import { AboutSection } from "@/components/layout/about";
-import { Project } from "@/components/layout/project";
-import { Footer } from "@/components/layout/footer";
+import { Sidebar } from "@/components/layout/sidebar";
+import { Hero } from "@/components/sections/hero";
+import { About } from "@/components/sections/about";
+import { ProjectShowcase } from "@/components/sections/projects";
+import { Contact } from "@/components/sections/contact";
+import { Footer } from "@/components/sections/footer";
+import { BackgroundEffects } from "@/components/ui/background-effects";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-background">
-      <Project />
-      <AboutSection />
-      <Footer />
+    <div className="min-h-screen bg-background relative">
+      <BackgroundEffects />
+      <Sidebar />
+      
+      <main className="md:ml-72 min-h-screen relative">
+        <div className="px-6 py-12 md:px-12 md:py-20 lg:py-24 max-w-5xl">
+          <Hero />
+          <div className="py-24 md:py-32">
+            <ProjectShowcase />
+          </div>
+          <div className="py-24 md:py-32 border-t border-border/50">
+            <About />
+          </div>
+          <div className="py-24 md:py-32 border-t border-border/50">
+            <Contact />
+          </div>
+        </div>
+        <Footer />
+      </main>
     </div>
   );
 }

@@ -6,23 +6,17 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { useClickSound } from "@/lib/audio";
 
-function useMounted() {
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
+  const playSound = useClickSound();
+
   React.useEffect(() => {
     setMounted(true);
   }, []);
-  return mounted;
-}
-
-export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const mounted = useMounted();
-  const playSound = useClickSound();
 
   if (!mounted) {
-    return (
-      <div className="w-9 h-9" />
-    );
+    return <div className="w-9 h-9" />;
   }
 
   const isDark = theme === "dark";
@@ -33,9 +27,9 @@ export function ThemeToggle() {
         setTheme(isDark ? "light" : "dark");
         playSound();
       }}
-      className="relative p-2 text-muted-foreground hover:text-foreground transition-colors"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -45,7 +39,7 @@ export function ThemeToggle() {
             initial={{ rotate: -90, opacity: 0 }}
             animate={{ rotate: 0, opacity: 1 }}
             exit={{ rotate: 90, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.2 }}
           >
             <Moon className="w-5 h-5" />
           </motion.div>
@@ -55,7 +49,7 @@ export function ThemeToggle() {
             initial={{ rotate: 90, opacity: 0 }}
             animate={{ rotate: 0, opacity: 1 }}
             exit={{ rotate: -90, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.2 }}
           >
             <Sun className="w-5 h-5" />
           </motion.div>
