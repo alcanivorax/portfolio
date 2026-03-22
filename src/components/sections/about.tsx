@@ -16,7 +16,15 @@ const skills = [
 
 function Database({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <ellipse cx="12" cy="5" rx="9" ry="3" />
       <path d="M3 5V19A9 3 0 0 0 21 19V5" />
       <path d="M3 12A9 3 0 0 0 21 12" />
@@ -26,7 +34,15 @@ function Database({ className }: { className?: string }) {
 
 function Box({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
     </svg>
   );
@@ -34,7 +50,15 @@ function Box({ className }: { className?: string }) {
 
 function Cloud({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
     </svg>
   );
@@ -65,14 +89,15 @@ export function About() {
 
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I&apos;m a full-stack developer passionate about building products that 
-              solve real problems. I specialize in modern web technologies and 
-              have a keen interest in developer tools and AI applications.
+              I&apos;m a full-stack developer passionate about building products
+              that solve real problems. I specialize in modern web technologies
+              and have a keen interest in developer tools and AI applications.
             </p>
             <p>
-              Currently building <span className="text-foreground font-medium">DevInsight</span>, 
-              an AI-powered GitHub repository analyzer, and maintaining a suite of 
-              minimal CLI tools under the Nero brand.
+              Currently building{" "}
+              <span className="text-foreground font-medium">DevInsight</span>,
+              an AI-powered GitHub repository analyzer, and maintaining a suite
+              of minimal CLI tools under the Nero brand.
             </p>
           </div>
 
@@ -95,7 +120,9 @@ export function About() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="lg:col-span-7 space-y-6"
         >
-          <p className="text-sm font-medium text-foreground">Technologies I work with</p>
+          <p className="text-sm font-medium text-foreground">
+            Technologies I work with
+          </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {skills.map((skill, i) => (
               <motion.div
@@ -116,8 +143,8 @@ export function About() {
 
           <div className="grid grid-cols-2 gap-4 pt-4">
             {[
-              { label: "Years", value: "2+", desc: "Experience" },
-              { label: "Projects", value: "4+", desc: "Completed" },
+              { label: "Years", value: "1", desc: "Experience" },
+              { label: "Projects", value: "7+", desc: "Completed" },
               { label: "Tools", value: "10+", desc: "Built" },
               { label: "Open", value: "100%", desc: "Source" },
             ].map((stat, i) => (
@@ -129,7 +156,9 @@ export function About() {
                 transition={{ duration: 0.3, delay: 0.2 + i * 0.05 }}
                 className="p-4 rounded-lg bg-muted/20 border border-border/50"
               >
-                <p className="text-xl font-semibold text-foreground">{stat.value}</p>
+                <p className="text-xl font-semibold text-foreground">
+                  {stat.value}
+                </p>
                 <p className="text-xs text-muted-foreground">{stat.desc}</p>
               </motion.div>
             ))}
